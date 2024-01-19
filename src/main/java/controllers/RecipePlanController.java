@@ -14,7 +14,6 @@ import service.LoginService;
 @Controller
 @RequiredArgsConstructor
 public class RecipePlanController {
-    private final AdminRepository adminRepository;
 
     private final RecipePlanRepository recipePlanRepository;
 
@@ -41,7 +40,7 @@ public class RecipePlanController {
             RecipePlan recipePlan = new RecipePlan(nameMeal,displayOrder,recipe,dayName,plan);
             recipePlanRepository.create(recipePlan);
             return "redirect:/addRecipeToPlan";
-        }else {
+        } else {
             return "";
         }
     }
